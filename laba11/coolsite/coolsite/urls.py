@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from mail.views import index
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('mail/', index),  #http://127.0.0.1:8000/mail/
 ]
