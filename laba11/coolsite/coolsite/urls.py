@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mail.views import index
+from mail.views import *
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mail/', index),  #http://127.0.0.1:8000/mail/
+    path('', include('mail.urls')),  # http://.0.0.1:8000/mail/
 ]
+
+handler404 = pageNotFound
